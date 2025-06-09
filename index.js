@@ -24,7 +24,17 @@ chat1.save().then((res)=>{
 })
 app.get("/home",(req,res)=>{
     res.send("THIS IS HOME ROUTE OF DUMMY WHATSAPP!");
-})
+});
+app.get("/chats",(req,res)=>{
+    res.send("SUCCESSFULLY FETCHED CHATS!");
+    let data = Chat.find().then((res)=>{
+        console.log(res);
+        res.json(data);
+    }).catch((err)=>{
+        console.log(err);
+    })
+});
+app.use(express.static("public"));  //MIDDLEWARE TO CONNECT HTML WITH EXPRESS
 app.listen(PORT,()=>{
     console.log(`LISTENING.. AT PORT ${PORT}`);
 })
