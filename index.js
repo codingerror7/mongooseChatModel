@@ -17,6 +17,24 @@ const chat1 = new Chat({
     msg : "HEY, COMMENT CA VA?",
     date : new Date(),
 });
+let chat2 = new Chat({
+    from : "sahil",
+    to : "krishna",
+    msg : "HELLO, I FOUND YOUR DEATH CERTIFIATE.",
+    date : new Date(),
+});
+let chat3 = new Chat({
+    from : "aliMD@111",
+    to : "rahul909",
+    msg : "I have gt the suppliments",
+    date : new Date(),
+});
+let chat4 = new Chat({
+    from : "anmolch1",
+    to : "ashirwaa",
+    msg : "will you go college tomorrow?",
+    date : new Date(),
+});
 chat1.save().then((res)=>{
     console.log(res);
 }).catch((err)=>{
