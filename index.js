@@ -39,6 +39,21 @@ chat1.save().then((res)=>{
     console.log(res);
 }).catch((err)=>{
     console.log(err);
+});
+chat2.save().then((res)=>{
+    console.log(res);
+}).catch((err)=>{
+    console.log(err);
+});
+chat3.save().then((res)=>{
+    console.log(res);
+}).catch((err)=>{
+    console.log(err);
+})
+chat4.save().then((res)=>{
+    console.log(res);
+}).catch((err)=>{
+    console.log(err);
 })
 app.get("/home",(req,res)=>{
     res.send("THIS IS HOME ROUTE OF DUMMY WHATSAPP!");
