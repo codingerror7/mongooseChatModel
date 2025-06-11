@@ -86,7 +86,10 @@ app.get("/",(req,res)=>{
 });
 app.get("/home",(req,res)=>{
     res.send("this is home page route.");
-})
+});
+app.get("/home",(req,res)=>{
+    res.sendFile(path.join(__dirname,"public","index2.html"));
+});
 app.listen(port,()=>{
     console.log(`listening at port ${port}`);
-})
+});
