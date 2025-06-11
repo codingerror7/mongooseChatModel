@@ -71,3 +71,22 @@ app.use(express.static("public"));  //MIDDLEWARE TO CONNECT HTML WITH EXPRESS
 app.listen(PORT,()=>{
     console.log(`LISTENING.. AT PORT ${PORT}`);
 })
+
+
+
+
+//CODE TO CONNECT EXPRESS SERVER WITH FRONTEND:
+const express = require("express");
+const app = express();
+const path = require("path");
+const port = 8080;
+app.use(express.static(path.join(__dirname,"public")));    //DEFAULT MIDDLEWARE TO SEND STATIC FILES TO FRONTEND.
+app.get("/",(req,res)=>{
+    res.sendFile(path.join(__dirname,"public","index.html"));     //IT SENDS STATIC FILES WITH THE ROUTE
+});
+app.get("/home",(req,res)=>{
+    res.send("this is home page route.");
+})
+app.listen(port,()=>{
+    console.log(`listening at port ${port}`);
+})
